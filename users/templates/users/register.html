@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html> 
+<html>
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'search/main.css' %}">
+
+    <title>Who's In Class Homepage</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul id="nav_bar">
+                <li class="nav-links" id="classes"><a href="{% url 'search-about' %}">About</a></li>
+                <li class="nav-links" id="classes"><a href="{% url 'search-classes' %}">Classes</a></li>
+                <li class="nav-links" id="sign_in"><a href="#">Sign In</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="wic_classes">
+        <a href="{% url 'search-about' %}" id="wic_logo"><img src="{% static 'search/wic.png' %}"/></a>
+    </div>
+
+    <main role="main" class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="content-section">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <fieldset class="form-group">
+                            <legend class="border-bottom mb-4">Join Today</legend>
+                            {{ form.as_p }}
+                        </fieldset>
+                        <div class="form-group">
+                            <button class="btn btn-outline-info" type="submit">
+                                Sign Up
+                            </button>
+                        </div>
+                    </form>
+                    <div class="border-top pt-3">
+                        <small class="text-muted">
+                            Already Have An Acount?
+                            <a class="ml-2" href="#">Sign In</a>
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    
+</body>
+</html>

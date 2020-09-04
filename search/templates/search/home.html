@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html> 
+<html>
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'search/main.css' %}">
+
+    <title>Who's In Class Homepage</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul id="nav_bar">
+                <li class="nav-links" id="classes"><a href="{% url 'search-about' %}">About</a></li>
+                <li class="nav-links" id="classes"><a href="{% url 'search-classes' %}">Classes</a></li>
+                <li class="nav-links" id="sign_in"><a href="{% url 'register' %}">Sign In</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="wic">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+        <a href="{% url 'search-about' %}" id="wic_logo"><img src="{% static 'search/wic.png' %}"/></a>
+    </div>
+
+    <!-- FORM SEARCH -->  
+    <div class="form" style="border-radius: 25px;">  
+        <form>
+          <label for="form-search" style="border-radius: 25px;"></label>
+          <input type="text" id="form-search" placeholder="Search Class Names">
+        </form>
+    </div>  
+
+    <!-- BUTTONS -->
+    <div class= "buttons">  
+        <input type="submit" value="WIC Search" id="google_search">
+        <input type="submit" value="I'm Feeling Lucky" id="im_feeling_lucky" style="visibility:inherit;">
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html> 
+<html>
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'search/main.css' %}">
+
+    <title>Who's In Class Homepage</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul id="nav_bar">
+                <li class="nav-links" id="classes"><a href="{% url 'search-home' %}">Search</a></li>
+                <li class="nav-links" id="classes"><a href="{% url 'search-about' %}">About</a></li>
+                <li class="nav-links" id="classes"><a href="#">Classes</a></li>
+                <li class="nav-links" id="sign_in"><a href="#">Sign In</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="wic_classes">
+        <a href="#" id="wic_logo"><img src="{% static 'search/wic.png' %}"/></a>
+    </div>
+
+    <!-- FORM SEARCH -->  
+    <div class="classes">  
+        <ul>
+            <table id="courses_Datalist">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href=#>WCWP  10B  - The Writing Course B           [A00] Kolodezh</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href=#>WCWP  10B  - The Writing Course B           [B00] Iatarola </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href=#>WCWP 100   - Academic Writing               [A00] McCleary </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href=#>WCWP 100   - Academic Writing               [B00] Gagnon </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href=#>WCWP 100   - Academic Writing               [B00] Young </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </ul>
+    </div>  
+
+
+</body>
+</html>
